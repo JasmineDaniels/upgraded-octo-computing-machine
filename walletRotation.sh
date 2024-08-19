@@ -7,6 +7,13 @@ CLIENT_NAME=''
 CONNECTION_NAME=''
 WALLET_DIR='' 
 
+#Consider using jq to parse json responses from curl 
+# Ensure jq is installed
+# if ! command -v jq &> /dev/null; then
+#     echo "jq could not be found, please install it."
+#     exit 1
+# fi
+
 #TODO: Get Wallet Files
 
 #TODO: Update Zip file permissions
