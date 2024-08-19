@@ -16,7 +16,24 @@ WALLET_DIR=''
 
 #TODO: Get Wallet Files
 
+#Define directory where .zip is stored
+DOWNLOAD_DIR="$Home/Downloads"
+#Get today's date 
+TODAY=$(date +%Y-%m-%d)
+#Use find command to find the .zip uploaded on today's date
+WALLET_ZIP_FILE=$(find "$DOWNLOAD_DIR" -type f -name "*.zip" -newermt "$TODAY" ! -newermt "$TODAY +1 day" | head -n 1)
+# Check if the ZIP file was found
+if [[ -z "$WALLET_ZIP_FILE" ]]; then
+    echo "Error: No wallet ZIP file found in $DOWNLOAD_DIR for today's date."
+    exit 1
+else
+    echo "Wallet ZIP file found: $WALLET_ZIP_FILE"
+fi
+
+
 #TODO: Update Zip file permissions
+
+
 
 #TODO: Test Updated Connection Dry Run: 
 #Documentation https://docs.oracle.com/en/database/other-databases/essbase/21/essrt/op-connections-actions-test-post.html
