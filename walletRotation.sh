@@ -32,6 +32,14 @@ fi
 
 
 #TODO: Update Zip file permissions
+chmod 600 "$WALLET_ZIP_FILE"
+#Check if permissions were properly set
+if [[ $? -ne 0 ]]; then
+    echo "Error: Failed to set permissions for $WALLET_ZIP_FILE."
+    exit 1
+else
+    echo "Permissions set for $WALLET_ZIP_FILE."
+fi
 
 
 
