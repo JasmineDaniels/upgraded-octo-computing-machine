@@ -54,7 +54,6 @@ upload_wallet(){
     fi
 }
 
-
 #Test Connection
 final_connection_test(){
     echo "Testing New Connection..."
